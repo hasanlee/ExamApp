@@ -1,0 +1,40 @@
+﻿@model ExamApp.EntityLayer.DTOs.Exams.ExamAddDTO
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Exam /</span> Edit Exam</h4>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <h5 class="card-header"></h5>
+            <form asp-controller="Exam" asp-action="Update" method="post">
+                <div asp-validation-summary="ModelOnly"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="card-body">
+                    <div class="form-group">
+                        <label asp-for="StudentId" id="defaultFormControlInput" class="form-label">Student Number</label>
+                        <select class="form-control" asp-for="StudentId" asp-items="@(new SelectList(Model.Students,"Id","FullName"))"></select>
+                        <span asp-validation-for="StudentId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LessonId" for="defaultFormControlInput" class="form-label">Lesson Number</label>
+                        <select class="form-control" asp-for="LessonId" asp-items="@(new SelectList(Model.Lessons,"Id","Name"))"></select>
+                        <span asp-validation-for="LessonId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ExamDate" for="defaultFormControlInput" class="form-label">Exam Date</label>
+                        <input asp-for="ExamDate" type="date" class="form-control mb-3" id="defaultFormControlInput" placeholder="Enter Date" aria-describedby="defaultFormControlHelp">
+                        <span asp-validation-for="ExamDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Mark" for="defaultFormControlInput" class="form-label">Mark</label>
+                        <input asp-for="Mark" type="number" class="form-control mb-3" id="defaultFormControlInput" placeholder="Enter Mark" aria-describedby="defaultFormControlHelp">
+                        <span asp-validation-for="Mark" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

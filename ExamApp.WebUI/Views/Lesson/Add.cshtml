@@ -1,0 +1,44 @@
+﻿@model ExamApp.EntityLayer.DTOs.Lessons.LessonDTO
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Lesson /</span> Add Lesson</h4>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <h5 class="card-header"></h5>
+            <form asp-controller="Lesson" asp-action="Add" method="post">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label asp-for="LessonNo" id="defaultFormControlInput" class="form-label">Lesson Number</label>
+                        <input asp-for="LessonNo" type="text" class="form-control mb-3" id="defaultFormControlInput" placeholder="Enter Lesson Number" aria-describedby="defaultFormControlHelp">
+                        <span asp-validation-for="LessonNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Name" for="defaultFormControlInput" class="form-label">Name</label>
+                        <input asp-for="Name" type="text" class="form-control mb-3" id="defaultFormControlInput" placeholder="Enter Lesson Name" aria-describedby="defaultFormControlHelp">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ClassNo" for="defaultFormControlInput" class="form-label">Class Number</label>
+                        <input asp-for="ClassNo" type="number" class="form-control mb-3" id="defaultFormControlInput" placeholder="Enter Class Number" aria-describedby="defaultFormControlHelp">
+                        <span asp-validation-for="ClassNo" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                        <label asp-for="TeacherName" for="defaultFormControlInput" class="form-label">Teacher Name</label>
+                        <input asp-for="TeacherName" type="text" class="form-control mb-3" id="defaultFormControlInput" placeholder="Enter Teacher Name" aria-describedby="defaultFormControlHelp">
+                        <span asp-validation-for="TeacherName" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                        <label asp-for="TeacherSurname" for="defaultFormControlInput" class="form-label">Teacher Surname</label>
+                        <input asp-for="TeacherSurname" type="text" class="form-control mb-3" id="defaultFormControlInput" placeholder="Enter Teacher Surname" aria-describedby="defaultFormControlHelp">
+                        <span asp-validation-for="TeacherSurname" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
